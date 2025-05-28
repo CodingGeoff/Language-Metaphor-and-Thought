@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 11: Language, Metaphor and Thought</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            padding-top: 70px;
+            /* Initial padding to prevent content from being hidden by fixed nav */
+        }
+
+        .container {
+            width: 80%;
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Top Navigation Bar */
+        .top-nav {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: top 0.3s ease-in-out;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .top-nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .top-nav ul li {
+            margin: 0 10px;
+        }
+
+        .top-nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .top-nav ul li a:hover,
+        .top-nav ul li a:focus {
+            background-color: #555;
+        }
+
+        /* Headings and Text */
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            color: #2c3e50;
+        }
+
+        h2 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            color: #2980b9;
+        }
+
+        h3 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            color: #16a085;
+        }
+
+        h4 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            color: #7f8c8d;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul,
+        ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        blockquote {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #ecf0f1;
+            border-left: 5px solid #3498db;
+            font-style: italic;
+        }
+
+        .chinese-term {
+            font-style: normal;
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .code-example {
+            background-color: #eef;
+            padding: 10px;
+            border-left: 3px solid #77a;
+            margin: 10px 0;
+        }
+
+        /* Scroll to Top Button */
+        #scrollToTopBtn {
+            display: none;
+            opacity: 0;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            border: none;
+            outline: none;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            padding: 12px 15px;
+            border-radius: 50%;
+            font-size: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, opacity 0.3s, transform 0.3s;
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: #2980b9;
+            transform: scale(1.1);
+        }
+
+        .references ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .references li {
+            margin-bottom: 10px;
+        }
+
+        .exercises ol {
+            padding-left: 20px;
+        }
+
+        .exercises li {
+            margin-bottom: 10px;
+        }
+
+        /* Knowledge Point Styling */
+        .knowledge-point {
+            color: #2980b9;
+            text-decoration: underline;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .knowledge-point:hover {
+            color: #16a085;
+        }
+
+        /* Modal Styling */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 2000;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.6);
+            /* Black w/ opacity */
+            padding-top: 60px;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 25px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 700px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: slideIn 0.3s;
+        } */
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 2% auto;
+            /* 为更大的模态框调整了边距 */
+            padding: 30px;
+            border: 1px solid #888;
+            width: 90%;
+            /* 响应式宽度 */
+            max-width: 950px;
+            /* 为更大的图表增加了最大宽度 */
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: slideIn 0.3s;
+        }
+
+        @keyframes slideIn {
+            from {
+                top: -100px;
+                opacity: 0;
+            }
+
+            to {
+                top: 0;
+                opacity: 1;
+            }
+        }
+
+
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Styles for the BIRD prototype visualization (approximating Tailwind) */
+        .prototype-card {
+            margin-top: 20px;
+            /* mt-10 (approx) */
+            max-width: 600px;
+            /* max-w-2xl (approx) */
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+
+        .prototype-card h4 {
+            font-size: 1.5em;
+            /* text-xl */
+            font-weight: 600;
+            /* font-semibold */
+            color: #92400e;
+            /* text-amber-700 */
+            margin-bottom: 1rem;
+            /* mb-4 */
+            text-align: center;
+        }
+
+        .prototype-card .description {
+            text-align: center;
+            color: #525252;
+            /* text-neutral-600 */
+            margin-bottom: 1.5rem;
+            /* mb-6 */
+        }
+
+        .prototype-visualization-area {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+            /* p-4 */
+            border: 2px dashed #f59e0b;
+            /* border-amber-400 */
+            border-radius: 0.5rem;
+            /* rounded-lg */
+            background-color: #fef3c7;
+            /* bg-amber-100 */
+        }
+
+        .prototype-item {
+            position: relative;
+            text-align: center;
+            margin: 0.5rem;
+            /* mx-2 mb-2 */
+        }
+
+        .prototype-item .label {
+            display: inline-block;
+            font-size: 1.1em;
+            /* text-xl or text-2xl */
+            padding: 0.5rem 0.75rem;
+            /* p-2 or p-3 */
+            border-radius: 9999px;
+            /* rounded-full */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            /* shadow or shadow-md */
+        }
+
+        .prototype-item .tooltip {
+            visibility: hidden;
+            width: 160px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            /* Position the tooltip above the item */
+            left: 50%;
+            margin-left: -80px;
+            /* Use half of the width to center the tooltip */
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.8em;
+        }
+
+        .prototype-item:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .prototype-visualization-area .divider {
+            width: 100%;
+            height: 1px;
+            background-color: #f59e0b;
+            /* bg-amber-400 */
+            margin-top: 0.5rem;
+            /* my-2 */
+            margin-bottom: 0.5rem;
+        }
+
+        .prototype-members {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 1rem;
+            /* mt-4 */
+            flex-wrap: wrap;
+        }
+
+        .prototype-card .footer-text {
+            text-align: center;
+            font-size: 0.875rem;
+            /* text-sm */
+            color: #737373;
+            /* text-neutral-500 */
+            margin-top: 1rem;
+            /* mt-4 */
+        }
+
+        /* Specific colors from example */
+        .bg-teal-500 {
+            background-color: #14b8a6;
+            color: white;
+        }
+
+        .bg-teal-300 {
+            background-color: #5eead4;
+            color: #115e59;
+        }
+
+        .bg-sky-300 {
+            background-color: #7dd3fc;
+            color: #075985;
+        }
+
+        .bg-amber-300 {
+            background-color: #fcd34d;
+            color: #78350f;
+        }
+
+        .bg-neutral-300 {
+            background-color: #d4d4d4;
+            color: #404040;
+        }
+
+        /* Paragraph Translation Styling */
+        .translation-popup {
+            margin-top: 10px;
+            padding: 12px;
+            background-color: #e6f7ff;
+            /* Light blue background */
+            border: 1px solid #91d5ff;
+            /* Light blue border */
+            border-radius: 6px;
+            font-style: italic;
+            color: #333;
+            animation: fadeIn 0.5s;
+        }
+
+
+
+        /* Diagram specific styles in modal */
+        #modalVisualContent img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 15px auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        #modalVisualContent .diagram-text,
+        #modalVisualContent .diagram-box {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        #modalVisualContent .diagram-box {
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+
+        #modalVisualContent .diagram-arrow {
+            font-size: 2em;
+            color: #3498db;
+            margin: 5px 10px;
+        }
+
+        #modalVisualContent table.comparison-table td,
+        #modalVisualContent table.comparison-table th {
+            text-align: left;
+            vertical-align: top;
+        }
+
+        #modalVisualContent .chinese-in-diagram {
+            font-style: normal !important;
+            /* Ensure no italics for Chinese in diagrams */
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="top-nav" id="topNav">
+        <ul>
+            <!-- <li><a href="#section0">Title</a></li> -->
+            <li><a href="#section1">Preliminary Question-Language & Thought</a></li>
+            <li><a href="#section2">Language & Outside World</a></li>
+            <li><a href="#section3">Nature of Thought</a></li>
+            <li><a href="#section4">Nature of Categorization</a></li>
+            <li><a href="#section5">Conceptual Metaphor</a></li>
+            <li><a href="#section6">Summary</a></li>
+            <li><a href="#exercises">Exercises</a></li>
+            <li><a href="#references">References</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1 id="section0">Chapter 11: Language, Metaphor and Thought</h1>
+
+        <p tabindex="0"
+            data-translation-zh="在本章中，我们将探讨语言与思维之间的关系。您可能会问：为什么标题中会有“隐喻”二字？嗯，您将会看到，隐喻一方面是一种语言现象，一种修辞格（修辞格），另一方面也是一种认知手段，一种思维方式（思维方式）。从这个意义上说，隐喻充当了语言与思维之间的桥梁。">
+            In this chapter, we shall examine the relationships between language and thought. You may ask: But why is
+            there a “metaphor” in the title? Well, you will see that metaphor is on the one hand a language phenomenon,
+            a figure of speech (<span class="chinese-term">修辞格</span>), on the other hand a cognitive device, a figure
+            of thought (<span class="chinese-term">思维方式</span>). In this sense, metaphor serves as a link between
+            language and thought.</p>
+
+        <p tabindex="0" data-translation-zh="在前四个小节中，我们将相继探讨四个问题：语言与思维的关系是什么？语言与外部世界的关系是什么？思维的本质是什么？以及范畴化（范畴化）的本质是什么？">
+            In the first four sections, we are going to consider four questions one after another. They are:</p>
+        <ul>
+            <li>What is the relationship between language and thought?</li>
+            <li>What is the relationship between language and the outside world?</li>
+            <li>What is the nature of thought?</li>
+            <li>And what is the nature of categorization (<span class="chinese-term">范畴化</span>)?</li>
+        </ul>
+        <p tabindex="0"
+            data-translation-zh="我们并非旨在为每个问题提供一个标准答案，因为认知科学家们尚未能找到这样的答案。提出这些问题的目的是引起您的注意，并帮助您认识到这些问题不应被视为理所当然。在第五节中，我们将重新审视我们早已熟知的修辞手法——“隐喻”，届时我们将看到隐喻对我们概念化世界的影响有多深。最后，第六节对全章内容进行总结。">
+            We do not aim at providing you with one correct answer for each of the questions, for indeed cognitive
+            scientists have not been able to come up with such an answer. The purpose of raising these questions is to
+            call your attention to them and to help you see that they should not be taken for granted. In Section 5, we
+            are going to take a fresh look at the already familiar figure of speech known as “metaphor”, where we shall
+            see how deeply metaphor has influenced our conceptualization of the world. Finally Section 6 gives a summary
+            of the whole chapter.</p>
+
+        <h2 id="section1">1. A Preliminary Question: The Relationship Between Language and Thought</h2>
+        <p tabindex="0"
+            data-translation-zh="您是否曾思考过语言与思维之间的关系？或许只是偶尔。或许一次也没有。为什么呢？因为这个问题如此根本、如此基础，并且看起来如此直截了当，以至于我们倾向于将其视为理所当然。毕竟，我们每个人至少会说一种语言，并且都能用我们所说的语言不太费力地思考——这还不够简单吗？">
+            Have you ever considered the question what the relationship between language and thought is? Perhaps only
+            occasionally. Perhaps not even once. Why? Because the question is just so fundamental and basic and appears
+            to be so straightforward that we tend to take it for granted. Well, all of us can speak at least one
+            language, and all of us can think without too much difficulty in that language we speak—isn’t this simple
+            enough?</p>
+        <p tabindex="0"
+            data-translation-zh="但这真的那么简单吗？这真是一个不值得探究的问题吗？在我们童年时期，我们都曾是提出诸如“风不吹的时候它在做什么？”或“我出生前住在哪里？”或“我死后会住在哪里？”这类傻问题的专家。随着年龄的增长，我们逐渐失去了那份天真，随之而去的是我们对世界、生命和人类最根本问题的好奇心。其中一个问题便是语言与思维的关系。语言反映了我们的思想吗？语言组织了我们的思想吗？语言控制了我们的思想吗？">
+            But is it really that simple? Is it really a question not worthy of pursuing? In our childhood we were all
+            experts at raising silly questions such as “What does the wind do when it doesn’t blow?” or “Where did I
+            live before I was born?” or “Where will I live after I die?” As we grow older, we gradually lose that
+            naivety and with it goes our curiosity about the most fundamental questions of the world, life and mankind.
+            One such question is the relationship between language and thought. Does language reflect our thought? Does
+            language organize our thought? Does language control our thought?</p>
+        <p tabindex="0"
+            data-translation-zh="几个世纪以来，一直有语言学家思考过这个问题。本杰明·李·沃尔夫便是其中之一。他将语言视为一副或多或少带有扭曲镜片的眼镜，我们通过它观察周围的环境（请注意这里运用了一个隐喻）。他对一种与英语截然不同的语言——居住在亚利桑那州的普韦布洛印第安人部落霍皮族语言的研究，使他的这一看法更加敏锐。他提出，不同的语言赋予其使用者不同的世界观，并且他观察到，英语的世界观与霍皮族的世界观在空间和时间概念化方面差异最为显著。这后来被称为<span class='knowledge-point' data-visual='whorf-hypothesis'>沃尔夫假说</span>（<span class='chinese-term'>伍尔夫假设</span>）。">
+            Over the centuries there have been linguists who have pondered over this question. Among them was Benjamin
+            Lee Whorf. He perceived language as a pair of glasses with more or less warped lenses through which we view
+            our surroundings (notice there is a metaphor at work here). This perception was sharpened by his work with a
+            language that is very different from English—that of the Hopi, a tribe of Pueblo Indians living in Arizona.
+            He suggested that different languages give their speakers different world views and he observed that the
+            world view of the English departs most radically from that of the Hopi in their conceptualizations of space
+            and time. This has come to be referred to as the <span class="knowledge-point"
+                data-visual="whorf-hypothesis">Whorf hypothesis</span> (<span class="chinese-term">伍尔夫假设</span>). (See
+            also: <span class="knowledge-point" data-visual="linguistic-determinism-relativity">linguistic determinism
+                and linguistic relativity</span> (<span class="chinese-term">语言决定论和语言相对论</span> ))</p>
+        <p tabindex="0"
+            data-translation-zh="例如，在英语中，我们的空间概念如此普遍，以至于我们几乎能将其完全转移到时间上。结果，时间被概念化为一个维度严格有限的空间，或是在这样一个空间上的运动。我们也把时间当作一种物质，将其分割成单位并加以计数。这就是为什么我们可以说一秒、两分钟、三小时、四天、五周等等。我们还对空间和时间使用相同的介词，如 before、after、in、at、on。形容词也是如此，如 long、short、same、different、right、wrong、hard、nice、more、less 等。甚至一些名词也为空间和时间所共有。想想 stretch of time、segment of time、amount of time，你就会明白我的意思了。">
+            For example, in English our concepts of space are so pervasive that we are able to transfer them almost
+            totally to time. As a result, time is conceived as a space of strictly limited dimensions, or as a motion
+            upon such a space. We also treat time as a mass and carve it into units and count them. That’s why we can
+            say one second, two minutes, three hours, four days, five weeks, etc. We also use the same prepositions such
+            as <em>before</em>, <em>after</em>, <em>in</em>, <em>at</em>, <em>on</em> for both space and time. The same
+            is true with adjectives such as <em>long</em>, <em>short</em>, <em>same</em>, <em>different</em>,
+            <em>right</em>, <em>wrong</em>, <em>hard</em>, <em>nice</em>, <em>more</em>, <em>less</em>, etc. Even some
+            nouns are shared by space and time as well. Consider <em>stretch of time</em>, <em>segment of time</em>,
+            <em>amount of time</em>, and you’ll see what I mean.
+        </p>
+        <p tabindex="0"
+            data-translation-zh="然而，根据沃尔夫的说法，这在霍皮语中几乎从未发生过，霍皮语中的时间更准确地翻译为一种“持续”。这种“持续”似乎无法用空间或运动来理解。为了用一个例子来说明英语的时间和霍皮语的“持续”之间的差异，让我们看看这个句子：“十天比九天长”。霍皮语中用持续表达同样意思的说法会类似于“第十天比第九天晚”。">
+            However, according to Whorf, this is almost never done in Hopi, where time is more accurately translated as
+            a kind of “duration”. This “duration” seems to be inconceivable in terms of space or motion. To illustrate
+            the differences between the English time and the Hopi “duration” with one example, let’s look at the
+            sentence “Ten days is longer than nine days”. The Hopi expression of the same idea in terms of duration
+            would be something like “The tenth day is later than the ninth”.</p>
+        <p tabindex="0"
+            data-translation-zh="沃尔夫进一步指出，近期物理学以及哲学和逻辑学中的许多难题，都是我们努力摆脱从语言中继承的世界观的结果。他甚至推测，像霍皮族那样的世界观可能比西欧语言更适合现代物理学的概念（Bolinger 1968: 253 - 255）。">
+            Whorf further pointed out that much that is difficult in recent physics as well as in philosophy and logic
+            has been the struggle to climb out of the way of looking at the world which we inherit from our language. He
+            even surmised that a world view such as that of the Hopi might be more congenial to the concepts of modern
+            physics than the languages of Western Europe (Bolinger 1968: 253 - 255).</p>
+        <p tabindex="0"
+            data-translation-zh="沃尔夫假说在语言学家、哲学家和人类学家中引发了一系列争论。如今，人们普遍认为沃尔夫的立场有些夸大。尽管如此，语言与思维之间的关系仍然是一个值得进一步研究的谜团。我们希望当您读完本章后，能够对这个问题形成自己的看法。">
+            The Whorf hypothesis has aroused a series of debate among linguists, philosophers, and anthropologists.
+            Nowadays it is generally felt that Whorf’s position was exaggerated. Nevertheless, the relationships between
+            language and thought still remain a mystery worthy of further investigations. We hope that when you reach
+            the end of this chapter, you will be able to form your own opinions on this issue.</p>
+
+        <h2 id="section2">2. What Does Language Reflect? The Relationship Between Language and the Outside World</h2>
+        <p tabindex="0"
+            data-translation-zh="让我们继续讨论与第一个问题相关的另一个问题：您认为语言与外部世界的关系是什么？语言反映了外部世界吗？语言扭曲了外部世界的画面吗？语言创造了外部世界吗？在本节中，我们将看到传统语言学方法和现代认知方法对此给出了截然不同的答案。">
+            Let us move on to another question which is related to the first one: What do you think is the relationship
+            between language and the outside world? Does language mirror the outside world? Does language give a
+            distorted picture of the outside world? Does language create the outside world? In this section, we shall
+            see that the <span class="knowledge-point" data-visual="traditional-cognitive-linguistics">traditional
+                linguistic approach and the modern cognitive approach</span> have provided very different answers.</p>
+
+        <h3>The Traditional Linguistic Approach</h3>
+        <p tabindex="0" data-translation-zh="首先让我们看看传统语言学对这些问题有什么看法。基本上，其主要观点可以概括为以下三点（Gardenfors 1998，第5章，第2页）：">First
+            let’s see what traditional linguistics has got to say on these questions. Basically, its main tenets can be
+            summarized as the following three points (Gardenfors 1998, chapter 5, p. 2):</p>
+        <ol>
+            <li>Meaning exists in the objective world. That is to say, the meaning of a word or expression is something
+                out there in the world. It is not something created by the human mind. The meaning of an expression is
+                independent of how individual users understand it. For example, the meaning of the word <em>table</em>
+                exists because in the objective world there is such an entity table. How individual users use the word
+                <em>table</em> will not alter its meaning.
+            </li>
+            <li>Language derives meaning from reference to objects in this world. That is to say, the constituents of
+                the language are mapped onto the outside world. Names are mapped onto objects, verbs are mapped onto
+                sets of objects or relations between objects, adjectives are mapped onto properties of objects, etc. For
+                example, the name <em>book</em> refers to the concrete entity <em>book</em> in the objective world; the
+                verb <em>rise</em> captures the relationship between two objects when one is moving upward and the other
+                remaining static; the adjective <em>long</em> captures the property shared by objects like a road, a
+                train, or a string.</li>
+            <li>The main objective of linguistic research is to formulate truth conditions for the sentences in the
+                language because such conditions are supposed to determine the meaning of those sentences. Take the
+                sentence “The apple is red” as an example. What is left for linguists to do is to work out under which
+                conditions this sentence can be judged to be true, that is, under which conditions this sentence
+                describes faithfully a state of affairs that exists in the outside world. Once that is found out, the
+                meaning of the sentence is clear.</li>
+        </ol>
+        <p tabindex="0" data-translation-zh="那么，您对这三个主张有何看法？至少乍一看，它们看起来相当有说服力，似乎抓住了我们关于语言的直觉。您能用一个图来说明传统语言学提出的这些观点吗？">
+            Well, how did you like these three claims? At least at the first sight, they look rather convincing and seem
+            to have captured our intuition concerning language. Can you illustrate these points made by traditional
+            linguistics with a figure?</p>
+        <p><strong>Figure 1 Language and the world in traditional linguistics</strong><br>
+            <em>(Figure not provided in the text. The text describes it as one oval for language, another for the
+                outside world, and an arrow between them showing language mirrors the world.)</em>
+        </p>
+        <p tabindex="0"
+            data-translation-zh="总而言之，这种传统的语言学方法赋予语言和语言使用者一个相当被动的角色：一切都已存在于世界之中。人类用他们的语言所必须做的，实际上也是他们所能做的，就是尽可能地精确反映那个外部世界。">
+            All in all, this traditional linguistic approach ascribes to language, and to language users, a rather
+            passive role: Everything is already out there in the world. What human beings have to do, and indeed what
+            they can do, with their language, is to mirror that outside world as closely as possible.</p>
+
+        <h3>The Modern Cognitive Approach</h3>
+        <p tabindex="0"
+            data-translation-zh="但是人类真的如此被动吗？我们将看到，另一种方法，即现代认知方法，对语言反映什么的问题给出了一个截然不同的答案。同样，我们可以将其概括为三点（Gardenfors 1998，第5章，第3-4页）：">
+            But are human beings really as passive as that? We shall see that an alternative approach, the modern
+            cognitive approach, has come up with a rather different version of answer on the question what language
+            reflects. Again we can summarize it along three lines (Gardenfors 1998, chapter 5, pp. 3 - 4):</p>
+        <ol>
+            <li>Meanings are mental entities, i.e., they are things in the head. To put it in another way, meanings are
+                elements of a conceptual structure in the heads of the language users. This claim is in direct contrast
+                with the claim made by traditional linguistics that meaning is something out there in the world.</li>
+            <li>Language does not derive meaning from reference to objects in the outside world. Rather, language
+                derives meaning from reference to a conceptualization of the world. In other words, what language
+                represents is not the outside world, but a particular conceptualization of that world. Language may be
+                said to represent the outside world only in an indirect way via a conceptualization.</li>
+            <li>Language itself is part of the conceptual structure in the heads of the language users. It is not an
+                entity with independent standing isolated from other mental faculties such as memory, perception,
+                logical inferencing, etc. Rather it is intimately linked with these other mental faculties and as such
+                mirrors the interplay of psychological, cultural, social, ecological, and other factors.</li>
+        </ol>
+        <p tabindex="0" data-translation-zh="现在您能修改图1，使其能够表示认知方法关于语言与世界关系的主要主张吗？">Now can you modify Figure 1 so that it
+            can represent the main claims of the cognitive approach on the relationship between language and the world?
+        </p>
+        <p><em>(The text then implies a Figure 2 would represent this cognitive approach):</em><br>
+            In Figure 2, the big oval on the left stands for the conceptual structure in the heads of the language
+            users. Within it the small oval stands for the language faculty in the human mind. What language reflects is
+            a human conceptualization of the outside world, hence the arrow pointing from language to conceptual
+            structure. The oval on the right stands for the outside world. The conceptual structure is a
+            conceptualization of this world. <em>(Figure not provided in the text).</em></p>
+        <p tabindex="0" data-translation-zh="在传统语言学方法和现代认知方法之间，您更倾向于哪一个？或者，对于语言与外部世界的关系问题，您或许有自己的答案？">Between the
+            traditional linguistic approach and the modern cognitive approach, which one do you prefer? Or perhaps you
+            have got your own answers on the question concerning the relationships between language and the outside
+            world?</p>
+
+        <h2 id="section3">3. What Is the Nature of Thought? (<span class="chinese-term">思维的本质是什么?</span>)</h2>
+        <p tabindex="0"
+            data-translation-zh="让我们继续讨论第三个问题：思维的本质是什么？用中文来说，就是“思维的本质是什么？”这又是一个相当哲学化的问题，您可能会自言自语：嘿，我们在这里讨论语言，为什么要费心进行哲学研究呢？嗯，您会发现哲学和语言研究是密切相关的。一方面，一些有趣的语言现象——包括合作原则和言语行为理论（您可能还记得第五章的内容）——最初是由哲学家系统研究的。另一方面，语言学家在揭示人类语言奥秘方面的努力也为许多哲学问题提供了启示。每一种关于语言和思维的方法都必须以特定的哲学为指导，无论是客观主义、主观主义还是任何其他学派。">
+            Let us move on to the third question: What is the nature of thought? To put it in Chinese, the question is
+            <span class="chinese-term">思维的本质是什么?</span> This is again a rather philosophical question and you may be
+            saying to yourself: Hey, we are talking about language here, and why shall we bother with philosophical
+            investigations? Well, you will see that philosophy and language research are very much interrelated. On the
+            one hand, some interesting language phenomena—including the Cooperative Principle and the speech act theory,
+            which you may recall from Chapter 5—were first systematically studied by philosophers. On the other hand,
+            linguists’ efforts in revealing the mysteries of human language have also shed light on a lot of
+            philosophical issues. Every approach to language and thought must be guided by a particular philosophy, be
+            it objectivism, subjectivism, or any other school.
+        </p>
+        <p tabindex="0"
+            data-translation-zh="在本节中，我们将比较两种不同的答案，一种由<span class='knowledge-point' data-visual='objectivism-experientialism'>客观主义</span>（<span class='chinese-term'>客观主义</span>）提供，另一种由<span class='knowledge-point' data-visual='objectivism-experientialism'>经验现实主义</span>（<span class='chinese-term'>经验现实主义</span>）提供，关于思维本质的问题。">
+            In this section, we are going to compare two different answers, one provided by <span
+                class="knowledge-point" data-visual="objectivism-experientialism">objectivism</span> (<span
+                class="chinese-term">客观主义</span>) and the other by <span class="knowledge-point"
+                data-visual="objectivism-experientialism">experiential realism</span> (<span
+                class="chinese-term">经验现实主义</span>), on the question of the nature of thought.</p>
+
+        <h3>Objectivism</h3>
+        <p tabindex="0" data-translation-zh="让我们从客观主义开始。它在这个问题上的主要主张可以归纳为以下三点：">Let us start with objectivism. Its main
+            claims on this issue can be presented as the following three points:</p>
+        <ol>
+            <li>Thought is abstract in the sense that it is the manipulation of abstract symbols. For example, if A is
+                larger than B and B is larger than C, than A is larger than C. Symbols get their meaning via
+                correspondences to entities and categories in the world. In this way, the mind can represent external
+                reality and be said to “mirror nature” (Lakoff 1987: 163).</li>
+            <li>Thought is “disembodied” in the sense that it exists independently of the individual doing the thinking
+                and is thus not determined by his/her properties. The nature of the human body and the way it functions
+                are considered as irrelevant to the objectivist account of thought. In fact thought should transcend the
+                limitations of any particular kind of being. It follows from this whether the human beings have a body
+                that stands upright (as we do) or whether they have a body that lies front - back (as dogs do) will not
+                leave any impact on how they conceive the world.</li>
+            <li>Thought is objectively true or false. It is true and accurate when it corresponds to the outside world,
+                that is, when the symbols used in thought correctly correspond to entities and categories in the world
+                and when the mind reproduces the logical relations that exist objectively among the entities and
+                categories of entities in the world. It is false when it fails to do so (Lakoff 1987: 163).</li>
+        </ol>
+        <p tabindex="0"
+            data-translation-zh="这些关于思维的相当抽象的主张似乎很好地抓住了我们的常识：没有人能将思想识别为一个具体的实体——从这个意义上说，它确实是抽象的。同样很难看出人体在思想中扮演什么样的角色。因此，假设人体在思想中不起作用至少比假设相反的情况更安全。像“地球绕着太阳转”和“一加一等于二”这样的知识确实是客观真实的。">
+            These fairly abstract claims about thought seem to capture our common sense well: Nobody can identify a
+            thought as a concrete entity—in this sense it is indeed abstract. It is also very difficult to see what kind
+            of role the human body plays in thought. Hence it is at least safer to hypothesize that the human body plays
+            no part in thought than otherwise. Knowledge like “The earth moves around the sun” and “One plus one equals
+            two” is indeed objectively true.</p>
+        <p tabindex="0"
+            data-translation-zh="那么还有什么值得挑战的呢？嗯，如果我们将目光从对物理对象的这种常识性假设转向其他更抽象的领域，如政治运动、通货膨胀、友谊、婚姻、情感和外交政策，我们就会发现这些主张不一定成立。例如，当我说“我珍惜你我之间的友谊”时，我是在以一种抽象的方式思考友谊吗？不完全是。我实际上是将友谊这个抽象概念当作一个可以被珍惜的具体实体来对待，就像一件珍贵的礼物。如果人类真的不是用两条腿走路，而是像狗一样四肢爬行，你认为我们还会说“价格又上涨了”吗？最后，当一个男人宣称“我爱你”时，你将依据什么标准来判断他说的是真话呢？">
+            So what is left for challenge? Well, if we shift our eyes away from such commonsense assumptions about
+            physical objects to other more abstract domains such as political movements, inflation, friendships,
+            marriage, emotions, and foreign policies, we shall see that those claims do not necessarily hold. For
+            example, when I say “I treasure the friendship between you and me”, am I doing the thinking about the
+            friendship in an abstract way? Not exactly. I am actually treating friendship, an abstract concept, as a
+            concrete entity that can be treasured, just like a precious gift. And if indeed human beings did not walk on
+            their two legs but crawl like dogs on all fours, do you think that we would still say “The price goes up
+            again”? Finally, when a man declares “I love you”, against what criteria are you going to judge that he is
+            telling the truth?</p>
+
+        <h3>Experiential Realism</h3>
+        <p tabindex="0"
+            data-translation-zh="基于这些考虑，经验现实主义（Lakoff & Johnson 1980; Lakoff 1987; Johnson 1987）为思维的本质提供了另一种解释，可以概括为以下两点：">
+            On the basis of such considerations, experiential realism (Lakoff & Johnson 1980; Lakoff 1987; Johnson 1987)
+            provides an alternative account for the nature of thought, which may be summarized as the following two
+            points:</p>
+        <ol>
+            <li>Thought is “embodied”: It is grounded in our perception and determined by the characteristics of our
+                body and our social environment (Nuyts 1993). For example, our understanding of UP - DOWN is determined
+                by our physical make - up on the one hand and the gravity of the earth on the other hand. We grasp this
+                structure in thousands of perceptions and activities we experience every day, such as perceiving a tree,
+                our felt sense of standing upright, the activity of climbing stairs, forming a mental image of a
+                flagpole, measuring our own heights, and experiencing the level of water rising in the bathtub. From
+                these UP - DOWN experiences, images, and perceptions emerges the UP - DOWN structure.</li>
+            <li>Thought is largely imaginative, based on the principles of metaphor and metonymy, and goes far beyond
+                mirroring the outer world (ibid.). For example, in saying “He seems to be in high spirits these days”,
+                an abstract concept, emotions, is understood via a less abstract concept, verticality, through a
+                metaphor “Happiness Is Up”. In saying “I came across quite a few new faces at the meeting”, people are
+                referred to as faces through a metonymy “Face Stands for Person”.</li>
+        </ol>
+        <p tabindex="0" data-translation-zh="越来越多的语言学家开始接受经验现实主义提供的这种关于思维的解释，并认为它包含了很多真理。您怎么看？">More and more linguists
+            are coming to accept this account of thought provided by experiential realism and think it contains much
+            truth. What do you think?</p>
+
+        <h2 id="section4">4. What Is the Nature of Categorization? (<span class="chinese-term">范畴化</span>)</h2>
+        <p tabindex="0"
+            data-translation-zh="所谓范畴化，是指人们在使用语言时，必然会将周围世界中的所有实体进行分组的过程。例如，每当我们用“花”这个词来指代两种不同的花，如玫瑰和紫罗兰，或者用同一个词“高”来描述两个不同的物体，如树和旗杆时，我们都在进行范畴化行为。因为尽管两者不同（玫瑰与紫罗兰，树与旗杆），但在每种情况下都被视为相同。">
+            By categorization, we refer to the process by which people, in using language, necessarily group all the
+            entities in the world around them. For example, whenever we use the word <em>flower</em> to refer to two
+            different flowers, such as a rose and a violet, or describe two different objects, such as a tree and a
+            flagpole, by the same word <em>tall</em>, we are undertaking acts of categorization. For although different,
+            the two entities (rose vs. violet and tree vs. flagpole) are regarded in each case as the same.</p>
+        <p tabindex="0"
+            data-translation-zh="那么，我们为什么要关注范畴化呢？原因很简单：范畴化是人类最重要的认知活动之一。它是所有高级认知活动的基础。没有范畴化，我们就无法理解世界，因为输入的信息会过于庞大和混乱，以至于我们无法处理。范畴化的本质在于在差异中看到相同之处。">
+            Now why shall we bother with categorization? The reason is straightforward: Categorization is one of the
+            most important cognitive activities of human beings. It is fundamental to all higher cognitive activity.
+            Without categorization, we wouldn’t be able to come to terms with the world, for the input would be too
+            enormous and too messy for us to handle. The essence of categorization lies in seeing sameness in
+            difference.</p>
+        <p tabindex="0" data-translation-zh="范畴化引发了深刻的哲学问题。关于范畴化有许多不同的解释。">Categorization has raised deep philosophical
+            problems. There are many different accounts for categorization.</p>
+        <ul>
+            <li>At one extreme, one group of philosophers claim that sameness is merely a matter of human invention.
+                That is to say, those entities which may be called flowers, or which may be described as tall, really
+                have nothing in common except for the names ascribed to them by human beings.</li>
+            <li>At the other extreme, another group of philosophers claim that categories like FLOWER and TALL exist
+                independently of language and language users. They maintain that the words <em>flower</em> and
+                <em>tall</em> merely name those categories that have already existed in the outside world prior to
+                language.
+            </li>
+            <li>In between these two extremes, there is an alternative position which postulates that “a word and the
+                range of entities to which it may refer are mediated by a mental entity, i.e., a concept” (Taylor 1995:
+                ix). That is to say, it is in virtue of a speaker’s knowledge of the concepts FLOWER and TALL that
+                he/she is able to categorize different entities as flowers or as being tall.</li>
+        </ul>
+        <p tabindex="0" data-translation-zh="要理解范畴化的本质，我们需要考虑以下问题：">To understand the nature of categorization, we need
+            to consider the following questions:</p>
+        <ul>
+            <li>Do categories have any basis in the real world, or are they merely constructs of the human mind?</li>
+            <li>What is the internal structure of categories?</li>
+            <li>How are categories learnt?</li>
+            <li>How do people assign entities to a category?</li>
+            <li>What kinds of relationships exist among categories?</li>
+        </ul>
+        <p>(Taylor 1995: 1 - 2)</p>
+        <p tabindex="0"
+            data-translation-zh="在本节的其余部分，我们将简要介绍对这些问题的两种不同解释，一种称为客观主义观点，另一种称为<span class='knowledge-point' data-visual='prototype-theory'>原型理论</span>。但在我们开始之前，您不妨在脑海中回顾一下自己对范畴化的理解。例如，您将如何定义“男孩”、“鸟”和“鱼”这些范畴？">
+            In the remaining part of this section, we are going to have a brief look at two different accounts of these
+            questions, one known as the objectivist view and the other known as the <span class="knowledge-point"
+                data-visual="prototype-theory">prototype theory</span>. But before we do that, you might like to go over
+            in your mind your own understanding of categorization. For example, how will you define the category BOY?
+            And BIRD? And FISH?</p>
+
+        <h3>4.1 The Objectivist View of Categorization</h3>
+        <p tabindex="0"
+            data-translation-zh="这种范畴化方法最终可以追溯到古希腊时期，特别是亚里士多德，他区分了事物的本质和偶然属性。本质是使事物成为其自身的东西。偶然属性是偶然的特性，它们在决定事物是什么方面不起作用。引用他的一个例子：人的本质是“两足动物”（您不必同意这一点）。其他属性，如白色或黄色，文明或野蛮，都是偶然的。它们可能对某个特定个体是真实的，但在确定一个实体是否确实是人方面是无关紧要的。">
+            This approach to categorization goes back ultimately to Greek antiquity, esp. to Aristotle, who
+            distinguished between the essence of a thing and its accidents. The essence is that which makes a thing what
+            it is. Accidents are incidental properties, which play no part in determining what a thing is. To cite one
+            of his examples: The essence of man is “two - footed animal” (you don’t have to agree with this). Other
+            properties, like being white or yellow, being cultured or barbarian, are accidental. They might be true of a
+            certain individual, but they are irrelevant in determining whether an entity is indeed a man.</p>
+        <p tabindex="0"
+            data-translation-zh="几个世纪以来，这种经典的范畴化方法得到了发展和修改，但它在心理学、哲学和语言学中的主导地位很少受到挑战。其基本假设可以概括为以下四点（Taylor 1995: 23 - 24）：">
+            Over the centuries this classical approach to categorization has been developed and modified, but its
+            domination in psychology, philosophy, and linguistics has rarely been challenged. Its basic assumptions can
+            be summarized as the following four points (Taylor 1995: 23 - 24):</p>
+        <ol>
+            <li>Categories are defined in terms of a conjunction of necessary and sufficient features.
+                <p>It follows from this that when we assign an entity X to the category Y, we do this by checking the
+                    properties of X against the set of features which together define the essence of the category Y. To
+                    return to the category MAN, Aristotle singled out two defining features for it, one being [two -
+                    footed], the other being [animal]. Individually, these two features are necessary for the definition
+                    of the category; if either of the two is not possessed by the entity X, then X cannot be said to be
+                    a member of the category MAN. Jointly, the two features are sufficient; that is to say, so long as
+                    an entity exhibits each of the two, it can safely be judged as a member of the category MAN.</p>
+            </li>
+            <li>Features are binary.
+                <p>This amounts to saying that a feature is either present or absent. It can take on only one of two
+                    values, i.e., either [+] or [-]. In any given instance, a feature is either involved in the
+                    definition of a category, or it is not; and an entity either possesses this feature, or it does not.
+                    To take the category BOY as an example, one of its defining features is [male]. An entity is either
+                    [+male] or [-male]. There can be no other possibilities.</p>
+            </li>
+            <li>Categories have clear boundaries.
+                <p>By this we mean that an entity is either a member of a category or it is not. A category, once
+                    established, divides the universe into two sets of entities—those that are members of the category,
+                    and those that are not. There do not exist ambiguous cases where an entity “in a way” or “to some
+                    extent” belongs to the category, but in another way does not. For example, a person is either a
+                    member of the category BOY or he is not. We cannot say that by this criterion he is and by that
+                    criterion he is not.</p>
+            </li>
+            <li>All members of a category have equal status.
+                <p>This is to say that there are no degrees of membership in a category, i.e., there are no entities
+                    which are better members of the category than others. All those entities which possess all the
+                    defining features of a category can be judged as full members of that category; in this sense they
+                    are equal to each other. And all those entities which do not possess all the defining features
+                    cannot be judged as members; in this sense they are also equal to each other. According to this
+                    view, we cannot say that a swallow is a better example of the category BIRD than a penguin. They are
+                    just both birds.</p>
+            </li>
+        </ol>
+        <p tabindex="0" data-translation-zh="所有这些主张听起来都很有说服力，并且符合我们的直觉。现在让我们详细研究一下男孩和鸟的范畴。您能为它们 각각想出一套必要且充分的特征吗？">All
+            these claims sound quite convincing and agree with our intuition. Now let’s investigate the categories of
+            BOY and BIRD in some detail. Can you come up with a set of necessary and sufficient features for each of
+            them?</p>
+        <p><strong>BOY</strong></p>
+        <ul class="code-example">
+            <li>+male</li>
+            <li>+unmarried</li>
+            <li>+not yet a father</li>
+            <li>? to ? years old</li>
+            <li>etc.</li>
+        </ul>
+        <p><strong>BIRD</strong></p>
+        <ul class="code-example">
+            <li>+having wings</li>
+            <li>+having a beak</li>
+            <li>+having feather</li>
+            <li>+able to fly</li>
+            <li>+able to lay eggs</li>
+            <li>+able to hatch eggs</li>
+            <li>etc.</li>
+        </ul>
+        <p tabindex="0" data-translation-zh="您注意到传统范畴化观点的困难了吗？是的，至少存在以下困难：">Have you noticed the difficulties with the
+            traditional view of categorization? Yes, there appear to be at least the following difficulties:</p>
+        <ol>
+            <li>As BOY and BIRD have shown, it is sometimes impossible to list all the common properties shared by the
+                members of a category.</li>
+            <li>Not all the members of a category may share a set of common properties. For this let’s think of the
+                category FURNITURE. An experiment by Rosch (1975) has found out that chairs, dressers, pianos, mirrors,
+                televisions and even pictures can all be counted as furniture in the eyes of Americans. But it is almost
+                impossible to find a property that is shared by all of them.</li>
+            <li>Not all features are binary, that is to say, not all features are a matter of all or none. Take [+able
+                to fly] for BIRD as an example. What about a swallow who was seriously hurt in one of its wings and can
+                only fly in a very awkward way? Is it able to fly or is it not?</li>
+            <li>Not all the categories have a clear - cut boundary. For example, it can be difficult to judge if a 35 -
+                year - old bachelor is a boy or not.</li>
+            <li>Not all members of a category have equal status. For example, a 15 - year - old unmarried boy is a
+                better example of BOY than a 35 - year - old bachelor.</li>
+        </ol>
+
+        <h3>4.2 The Prototype Theory of Categorization (<span class="chinese-term">原型论</span>)</h3>
+        <p tabindex="0"
+            data-translation-zh="我们刚才回顾的经典范畴化理论的许多不足之处，路德维希·维特根斯坦在他《哲学研究》中一段经常被引用的段落中已经预见到了，他在那里讨论了如何定义“游戏”这个范畴的问题。他指出，这个范畴的各种成员，如棋盘游戏、纸牌游戏、球类游戏等，并不共享一套共同的属性，而这些属性本应能将游戏与非游戏清晰地区分开来。这一观察有两个含义。首先，范畴的边界是模糊的而不是清晰的。其次，与经典理论的预期相反，“游戏”这个范畴不是通过共享的必要和充分特征来构建的，而是通过一个纵横交错的相似性网络来构建的。这并不否认“确实存在与该范畴典型相关的属性。一些成员共享其中一些属性，另一些成员共享另一些属性。然而，没有所有成员都共有并且只为它们所共有的属性。甚至可能出现某些成员与其他成员几乎没有任何共同之处的情况。”（Taylor 1995: 38）维特根斯坦用家族相似性的隐喻来描述“游戏”的结构，“因为家庭成员之间的各种相似之处：体格、特征、眼睛颜色、步态、气质等，都以同样的方式重叠和交错”（Wittgenstein 1978: 33）。">
+            Many of the inadequacies of the classical theory of categorization that we have just reviewed were
+            anticipated by Ludwig Wittgenstein in a frequently quoted passage in his <em>Philosophical
+                Investigations</em>, where he addressed the question of how to define the category GAME. He notes that
+            the various members of this category, such as board - games, card - games, ball - games, etc., do not share
+            a set of common properties on whose basis games can be clearly distinguished from non - games. This
+            observation has two implications. First, the boundary of the category is fuzzy rather than clear - cut.
+            Second, contrary to the expectations of the classical theory, the category GAME is not structured in terms
+            of shared necessary and sufficient features, but rather by a criss - crossing network of similarities. This
+            is not to deny that “there are indeed attributes typically associated with the category. Some members share
+            some of these attributes, other members share other attributes. However there are no attributes common to
+            all the members, and to them alone. It may even be the case that some members have practically nothing in
+            common with others.” (Taylor 1995: 38) Wittgenstein used the metaphor of a family resemblance to describe
+            the structure of GAME, “for the various resemblances between members of a family: build, features, color of
+            eyes, gait, temperament, etc., overlap and criss - cross in the same way” (Wittgenstein 1978: 33).</p>
+        <p tabindex="0"
+            data-translation-zh="这种情况绝非“游戏”这一范畴所特有。可以说，大多数范畴的结构都与此类似。基于这些观察并认识到经典理论的困难，哲学家和语言学家提出了一种关于范畴化的替代理论，称为<span class='knowledge-point' data-visual='prototype-theory'>原型理论</span>（<span class='chinese-term'>原型论</span>）。">
+            This state of affairs is by no means peculiar to the category GAME. Arguably, the majority of categories are
+            structured in a similar way to this. Based on these observations and recognizing the difficulties with the
+            classical theory, philosophers and linguists have put forward an alternative account for categorization,
+            which is termed the <span class="knowledge-point" data-visual="prototype-theory"><em>prototype
+                    theory</em></span> (<span class="chinese-term">原型论</span>).</p>
+        <p tabindex="0" data-translation-zh="术语“原型”可以粗略地理解为一个范畴的中心成员，或者可能是一组中心成员。原型理论的主要思想可以概括如下：">The term
+            <em>prototype</em> can be roughly understood as the central member, or perhaps the cluster of central
+            members, of a category. The main idea of the prototype theory can be summarized as follows:
+        </p>
+        <ol>
+            <li>Categories are defined in terms of a family of resemblance rather than by means of a set of necessary
+                and sufficient features.</li>
+            <li>Membership in a category is determined by the perceived distance of resemblance of the entity to the
+                prototype.</li>
+            <li>Membership is not a matter of all or none.</li>
+        </ol>
+        <p tabindex="0"
+            data-translation-zh="例如，实验表明，知更鸟和松鼠被认为是与鸟类范畴的原型非常接近的。另一方面，公鸡和企鹅则被认为离原型远得多。这就解释了为什么普通语言使用者认为公鸡和企鹅不太能代表鸟的概念。中文的“鸟”范畴也是如此，其结构大致可以用下图表示。椭圆的虚线代表范畴的模糊边界。">
+            For example, experiments show that robins and squirrels are conceived of as very close to the prototype for
+            the category of BIRD. Cocks and penguins, on the other hand, are conceived of as much farther away from the
+            prototype. That explains why the average language user considers cocks and penguins as less representative
+            of the concept of being a bird. The same is true with the Chinese category 鸟, whose structure may be roughly
+            represented by the following figure. The dotted line of the oval stands for the fuzzy boundary of the
+            category.</p>
+        <p><strong>Figure 3 The category of 鸟</strong><br>
+            <em>(Figure not provided in the text)</em>
+        </p>
+        <p tabindex="0"
+            data-translation-zh="大量实验证明了范畴原型结构的心理现实性。例如，研究发现椅子、沙发和桌子是家具的原型物品，而不是镜子、架子和钟表；还发现谋杀比献祭更是杀戮的典型例子。但为什么呢？原型从何而来？其中一种解释是原型范畴比经典范畴具有更高的效率。">
+            A large number of experiments have proved the psychological reality of the prototype structure of
+            categories. For example, it has been found that chairs, sofas, and tables, and not mirrors, shelves, and
+            clocks, are prototypical articles of furniture; it has also been found that murder is a better instance of
+            killing than sacrificing. But why? Where do prototypes come from? One of the explanations offered is that
+            prototype categories have a greater efficiency than classical categories.</p>
+        <blockquote>
+            Prototype categories have a flexibility, unknown to Aristotelian categories, in being able to accommodate
+            new, hitherto unfamiliar data. With only Aristotelian categories at our disposal, new data would often
+            demand, for their categorization, the creation of new categories, or a redefinition of existing categories.
+            On the other hand, new entities and new experiences can be readily associated, perhaps as peripheral
+            members, to a prototype category, without necessarily causing any fundamental restructuring of the category
+            system. (Taylor 1995: 53)
+        </blockquote>
+        <p tabindex="0" data-translation-zh="在这方面，原型范畴实现了不断变化的环境所要求的灵活性。">In this respect, prototype categories achieve
+            the flexibility required by an ever - changing environment.</p>
+        <p tabindex="0"
+            data-translation-zh="总而言之，到目前为止，在本章中，我们简要地谈到了关于语言和思维关系的沃尔夫假说。我们还比较了传统方法和现代认知方法对语言反映什么、思维的本质是什么以及范畴化的本质是什么这些问题的看法。在下一节中，我们将把目光转向概念隐喻（<span class='chinese-term'>概念隐喻</span>），在那里您将看到隐喻是如何充当语言和思维之间的桥梁的。">
+            To sum up, so far in this chapter we have briefly touched upon the Whorf hypothesis concerning the
+            relationship between language and thought. We have also compared the traditional approach and the modern
+            cognitive approach towards the questions what language reflects, what is the nature of thought and what is
+            the nature of categorization. In the following section, we are going to shift our eyes to <span
+                class="knowledge-point" data-visual="conceptual-metaphor">conceptual metaphor</span> (<span
+                class="chinese-term">概念隐喻</span>), where you will see that metaphor serves as a bridge between language
+            and thought.</p>
+
+        <h2 id="section5">5. Conceptual Metaphor (<span class="chinese-term">概念隐喻</span>)</h2>
+        <p tabindex="0"
+            data-translation-zh="我敢打赌你们都理解隐喻的含义。是的，它指的是一种修辞手法，使我们能够把一件事物当作另一件事物来谈论。例如，在彭斯著名的抒情诗《我的爱人像一朵红红的玫瑰》中，诗人的心上人被比作玫瑰。你们认为我们最有可能在哪些地方遇到大量隐喻呢？你们可能会说：“嗯，在文学作品中，尤其是在诗歌中。那些作家是伟大的隐喻创造者。”你们认为人们为什么在语言中使用隐喻呢？你们可能会说：“嗯，也许是为了某些审美目的。隐喻是一种有用的装饰手段。它们可以给语言增添很多情趣。”">
+            I bet you all understand the meaning of metaphor. Yes, it refers to a figure of speech which enables us to
+            talk about one thing as if it were another. For example, in Burns’ famous lyric <em>My Love Is a Red Red
+                Rose</em>, the poet’s sweetheart is compared to a rose. Where do you think we are most likely to come
+            across a lot of metaphors? You might say, “Well, in literary works, esp. in poems. Those writers are great
+            inventors of metaphors.” Why do you think people use metaphors in their language? You might say, “Well,
+            perhaps it is for some aesthetic purposes. Metaphors are a useful decorative device. They can add a lot of
+            flavor to one’s language.”</p>
+        <p tabindex="0" data-translation-zh="一切似乎都相当清楚。但这真的那么简单吗？在您仓促作答之前，我想提醒您注意以下例子：">Everything seems to be fairly
+            clear. But is it really as simple as that? Before you make a hasty answer, I would like to call your
+            attention to the following examples:</p>
+        <ul class="code-example">
+            <li>上一代/下一代</li>
+            <li>上次/下次</li>
+            <li>上半年/下半年</li>
+            <li>上司/下属</li>
+            <li>上流社会/下流社会</li>
+            <li>上级部门/下级部门</li>
+            <li>温度上升/温度下降</li>
+            <li>价格上涨/价格下跌</li>
+            <li>上班/下班</li>
+            <li>上岗/下岗</li>
+            <li>上课/下课</li>
+        </ul>
+        <p tabindex="0"
+            data-translation-zh="现在这些似乎是我们每天使用的非常普遍的表达方式。您能在其中观察到任何隐喻吗？“当然没有”可能是您的答案。但是看看“上一代”和“下一代”。上一代真的在您的上方吗？下一代真的在您的下方吗？不。那么我们在这里做什么呢？我们正在进行隐喻性思维。我们正在给一个非空间领域，即时间领域，赋予上下方向性。更具体地说，这里起作用的隐喻是“时间上较早的是上/时间上较晚的是下”。我们将这样的隐喻性思维称为概念隐喻。它们是我们在语言中可以注意到的隐喻表达的基础，尽管我们通常没有意识到概念隐喻本身的存在。">
+            Now these appear to be very common expressions we use every day. Can you observe any metaphors in them? “Of
+            course not” might be your answer. But look at 上一代 and 下一代. Is an older generation really located above you?
+            And is a younger generation really located below you? No. So what are we doing here? We are doing a
+            metaphorical thinking. We are giving a non - spatial domain, that of TIME, an up - down orientation. To be
+            more specific, the metaphor that is at work here is something like “Earlier in time is shang/Later in time
+            is xia”. We call metaphorical thinking like this conceptual metaphors. They underlie metaphorical
+            expressions which we can notice in language, although we usually remain unaware of the existence of
+            conceptual metaphors themselves.</p>
+        <p tabindex="0" data-translation-zh="现在您能找出其他三组例子背后的概念隐喻吗？应该不难。它们是：">Now can you work out the conceptual
+            metaphors underlying the other three groups of examples? It shouldn’t be too difficult. They are:</p>
+        <ul class="code-example">
+            <li>Of a more important social status is shang.</li>
+            <li>Of a less important social status is xia.</li>
+            <li>Of a larger quantity is shang.</li>
+            <li>Of a smaller quantity is xia.</li>
+            <li>Of a more intensive state is shang.</li>
+            <li>Of a less intensive state is xia.</li>
+        </ul>
+        <p tabindex="0"
+            data-translation-zh="此时，你们中的一些人可能会自言自语：“嗯，这一切听起来不错。但我属于那种缺乏想象力、从未创造过任何隐喻的人。到目前为止，我还活得好好的。”好吧，让我们试试看，我们是否真的能在不借助隐喻的情况下生存。让我们谈谈时间。为了避开像“上一代”和“下一代”这样的隐喻表达，也许我们可以说“前辈”和“后辈”？到目前为止还不错——但是你没看到你又被套住了吗？什么是“前辈”？什么是“后辈”？上一代不在你前面，下一代也不在你后面。你并没有摆脱你试图避免的隐喻思维。这次你不是给时间一个上下方向，而是给它一个前后方向。">
+            At this point some of you may be saying to yourselves, “Well, all this sounds nice. But I belong to that
+            type of people who lack imagination and who have never created any metaphors. So far I survive.” OK, let’s
+            have a try and see if we can indeed survive without resorting to metaphors. Let’s talk about time. To get
+            around metaphorical expressions like 上一代 and 下一代, perhaps we can say 前辈 and 后辈? So far so good—but don’t you
+            see you are caught again? What is 前辈? And what is 后辈? An older generation is not in front of you, nor is a
+            younger generation behind you. You haven’t shredded off the metaphorical thinking which you are trying to
+            avoid. This time instead of giving TIME an up - down orientation, you are giving it a front - back one.</p>
+        <p tabindex="0"
+            data-translation-zh="这里的关键是，一旦你的注意力被唤起，你就会意识到隐喻无处不在——不仅文学作品充满了隐喻，我们的日常话语也是如此。在我们日常语言的隐喻表达背后，有一个庞大的概念隐喻系统在组织我们的思维。这个系统在我们没有意识到其存在的情况下自动地、持续地运作着。从这个意义上说，我们是“活在隐喻中”的。">
+            The point here is once your attention is aroused, you will realize that metaphor is everywhere—not only are
+            literary works full of metaphors, but our daily utterances as well. Underlying metaphorical expressions in
+            our daily language, there is a huge system of conceptual metaphors which organizes our thinking. This system
+            works automatically and continuously without our being aware of its existence. In this sense, we say we live
+            by metaphors.</p>
+        <p tabindex="0" data-translation-zh="现在这一切听起来与我们熟悉的隐喻修辞方法大相径庭。我们将这种新方法称为隐喻的认知方法。其主要观点可以概括为以下五点：">Now all this
+            sounds very different from the rhetorical approach to metaphor that we are familiar with. We call this new
+            approach the cognitive approach to metaphor. Its main claims can be summarized as the following five points:
+        </p>
+        <ol>
+            <li><strong>Metaphor is ubiquitous.</strong> It is a prevalent phenomenon in ordinary language. Metaphor in
+                literature is not a distinctly different phenomenon from metaphor in ordinary language.
+                <p>Look at the following two groups of examples. Can you work out the conceptual metaphors underlying
+                    those utterances?</p>
+                <p><em>Group 1:</em></p>
+                <ul class="code-example">
+                    <li>Is that the foundation for your theory?</li>
+                    <li>The theory needs more support.</li>
+                    <li>The argument is shaky.</li>
+                    <li>The argument collapsed.</li>
+                </ul>
+                <p><em>Group 2:</em></p>
+                <ul class="code-example">
+                    <li>What he said left a bad taste in my mouth.</li>
+                    <li>I just can’t swallow that claim.</li>
+                    <li>That argument smells fishy.</li>
+                    <li>Let me stew over that for a while.</li>
+                </ul>
+                <p>(Lakoff & Johnson 1980: 4)</p>
+                <p>Underlying the first group of examples, there is the conceptual metaphor “Theories are buildings”.
+                    This metaphor enables us to understand theory, a fairly abstract concept, through building, a more
+                    concrete one. Hence we can talk about theory as if it had a foundation, needed support, could be
+                    shaky and could even collapse.</p>
+                <p>Underlying the second group of examples, there is the conceptual metaphor “Ideas are food”. With this
+                    metaphor, we talk about the taste and the smell of ideas. We even swallow or cook a certain idea as
+                    if it were food. What I would also like to emphasize is that the utterances in both groups of
+                    examples are taken from everyday conversations, not from literary works. This offers support for the
+                    claim that everyday utterances are full of metaphors just like literary works.</p>
+            </li>
+            <li><strong>Metaphor is conceptual in nature.</strong> It is not a figure of speech, a linguistic object. It
+                is more accurately a conceptual organization expressed by the linguistic object.
+                <p>To explicate this point, let us examine the following group of examples. Can you work out the
+                    conceptual metaphor at work here?</p>
+                <ul class="code-example">
+                    <li>Your claims are indefensible.</li>
+                    <li>He attacked every weak point in my argument.</li>
+                    <li>His criticisms were right on target.</li>
+                    <li>I demolished his argument.</li>
+                    <li>I’ve never won an argument with him.</li>
+                </ul>
+                <p>(Lakoff & Johnson 1980: 4)</p>
+                <p>This time the metaphor is “<span class="knowledge-point" data-visual="argument-is-war">Argument is
+                        war</span>”. What is to be noticed is that we do not just talk about arguments in terms of war,
+                    but we do our arguing and construe the concept ARGUMENT through the concept of war. Thus we see the
+                    person we are arguing with as an opponent; we defend our own positions and attack his/hers; we gain
+                    ground when we win arguments and lose ground when losing arguments; we also plan and use strategies
+                    while arguing. It is in this sense that we say the conceptual metaphor “Argument is war” structures
+                    what we do and how we understand what we are doing when we argue. To put it in another way, we talk
+                    about arguments in terms of war because we conceive of arguments through our concept of war, and we
+                    act according to the way we conceive of things.</p>
+                <p>To appreciate this point better, let us try to imagine a culture where an argument, instead of being
+                    viewed in terms of war, is viewed as a dance. Accordingly, the participants of an argument are seen
+                    as performers rather than fighters, and the goal is to perform in a balanced and aesthetically
+                    pleasing way rather than to win. People from such a cultural background would view, experience,
+                    carry out and talk about arguments in a different way from the English, and the difference would
+                    arise from the two different conceptual metaphors: “Argument is war” versus “Argument is dance”.</p>
+                <p>Not only is the concept ARGUMENT structured by the metaphor “Argument is war”, but many other
+                    abstract concepts like LIFE, LOVE, IDEAS, THEORIES are structured by conceptual metaphors like “Life
+                    is a play”, “Love is a journey”, “Ideas are food”, “Theories are buildings”. In brief, metaphor is
+                    not just a linguistic phenomenon, it is conceptual in nature; metaphorical expressions are possible
+                    because there exist metaphorical concepts in our conceptual system.</p>
+            </li>
+            <li><strong>Metaphor is systematic.</strong> One common metaphorical concept may give rise to numerous
+                linguistic expressions; different metaphorical concepts form a coherent network which underlies both our
+                speech and our thoughts.
+                <p>Conceptual metaphors do not operate in isolation from each other. Rather “metaphorical entailments
+                    can characterize a coherent system of metaphorical concepts and a corresponding coherent system of
+                    metaphorical expressions for those concepts” (Lakoff & Johnson 1980: 9). The systematicity of
+                    metaphor is reflected in three conceptual metaphors of TIME, as the following examples show:</p>
+                <p><em>Time is money.</em></p>
+                <ul class="code-example">
+                    <li>How do you spend your time these days?</li>
+                    <li>That flat tire cost me an hour.</li>
+                </ul>
+                <p><em>Time is a limited resource.</em></p>
+                <ul class="code-example">
+                    <li>You don’t use your time profitably.</li>
+                    <li>You are running out of time.</li>
+                </ul>
+                <p><em>Time is a valuable commodity.</em></p>
+                <ul class="code-example">
+                    <li>I don’t have the time to give you.</li>
+                    <li>Thank you for your time.</li>
+                </ul>
+                <p>(Lakoff & Johnson 1980: 7 - 8)</p>
+                <p>“Time is money”, “Time is a limited resource”, and “Time is a valuable commodity” are all
+                    metaphorical concepts in that they capture the way we use our everyday experiences with money,
+                    limited resources, and valuable commodities to conceptualize time. Furthermore, together they form a
+                    coherent system since in our society money is a limited resource, which is in turn a valuable
+                    commodity. We might say that “Time is money” entails that “Time is a limited resource”, which
+                    entails that “Time is a valuable commodity”.</p>
+            </li>
+            <li><strong>Metaphor is composed of two domains,</strong> a relatively more clearly structured source domain
+                (<span class="chinese-term">始源域</span>) and a relatively less clearly structured target domain. The
+                structure of a metaphor involves a mapping of the source domain’s schematic structure onto the target
+                domain.
+                <p>Examples include “Life is a play” (as used by Shakespeare) and the everyday conceptual metaphor “Life
+                    is a journey.” For "LIFE IS A JOURNEY", specific correspondences include:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Source Domain (JOURNEY)</th>
+                            <th>Target Domain (LIFE)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>traveler</td>
+                            <td>person</td>
+                        </tr>
+                        <tr>
+                            <td>point of departure</td>
+                            <td>birth</td>
+                        </tr>
+                        <tr>
+                            <td>initial conditions</td>
+                            <td>personal endowment</td>
+                        </tr>
+                        <tr>
+                            <td>baggage</td>
+                            <td>personal problems</td>
+                        </tr>
+                        <tr>
+                            <td>obstacles</td>
+                            <td>external difficulties</td>
+                        </tr>
+                        <tr>
+                            <td>distance covered</td>
+                            <td>accomplishments</td>
+                        </tr>
+                        <tr>
+                            <td>destination</td>
+                            <td>life purpose</td>
+                        </tr>
+                        <tr>
+                            <td>termination</td>
+                            <td>death</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li><strong>Metaphor is grounded in bodily experience.</strong> Metaphorical mappings are not arbitrary but
+                are grounded in bodily experience. Once established, they can impose structure on real life and create
+                new real-life correspondences. For example, the conceptual metaphor “More is up” arises from common
+                experiences like pouring more fluid into a container and seeing the level go up (a correspondence
+                between quantity and verticality).
+                <p>The experiential bases of metaphors and their realizations are both correlations in real-life
+                    experiences that share the same structure as the metaphors. Experiential bases precede and ground
+                    conventional metaphors, while realizations follow. What is a realization for one generation can
+                    become part of the experiential basis for the next.</p>
+                <p>Lakoff (1993) lists several ways in which metaphors can become real: through man-made objects
+                    designed according to the metaphor (e.g., thermometers for "More is up"), through imaginative
+                    products (e.g., cartoons depicting anger as steam from the ears for "Anger is a hot fluid in a
+                    container"), through physical symptoms, through social institutions (e.g., the design of halls in
+                    the Forbidden City where height symbolizes status, reflecting "High status is up"), etc. No clear
+                    distinction exists between experiential bases and realizations.</p>
+            </li>
+        </ol>
+        <p tabindex="0"
+            data-translation-zh="总之，本节展示了隐喻的普遍性、概念性、系统性、内部结构和经验基础。隐喻本质上是概念性的，而不仅仅是语言性的。隐喻表达是庞大概念隐喻系统的表面体现。作为一种认知工具，隐喻帮助我们通过更具体的概念来理解抽象概念。在结构上，它是一种从源域到目标域的单向映射，植根于身体经验。概念隐喻系统在无意识、自动和持续地运作，在我们的语言和概念化中扮演着重要角色。">
+            In summary, this section demonstrates metaphor’s prevalence, conceptual nature, systematicity, internal
+            structure, and experiential grounding. Metaphor is fundamentally conceptual, not just linguistic.
+            Metaphorical expressions are surface manifestations of a vast system of conceptual metaphors. As a cognitive
+            device, metaphor helps us understand abstract concepts via more concrete ones. Structurally, it’s a
+            one-directional mapping from a source to a target domain, grounded in bodily experience. The conceptual
+            metaphor system operates unconsciously, automatically, and constantly, playing a major role in our language
+            and conceptualization.</p>
+
+        <h2 id="section6">6. Summary</h2>
+        <p tabindex="0"
+            data-translation-zh="本章从“语言与思维的关系是什么？”这个问题开始。在一个极端，一些人认为语言被动地反映我们的思想。在另一个极端，一些人（以B. L. Whorf为代表）认为语言控制我们的思想。">
+            This chapter begins with the question, “What is the relationship between language and thought?” At one
+            extreme, some people think that language passively reflects our thought. At the other extreme, some people
+            (represented by B. L. Whorf) argue that language controls our thought.</p>
+        <p tabindex="0" data-translation-zh="与此密切相关的问题是“语言反映了什么？”传统语言学认为语言直接反映外部世界。然而，认知语言学声称语言反映了人类对外部世界的概念化。">Closely
+            related is the question “What does language reflect?” Traditional linguistics holds that language mirrors
+            the outside world directly. Cognitive linguistics, however, claims that language reflects a human
+            conceptualization of the outside world.</p>
+        <p tabindex="0"
+            data-translation-zh="这些语言学趋势在“思维的本质是什么？”这个问题上也存在差异。传统语言学家认为思维是抽象的和非具身的；认知语言学家则认为思维是具身的，并且在很大程度上是富有想象力的。">
+            These linguistic trends also differ on “What is the nature of thought?” Traditional linguists see thought as
+            abstract and disembodied; cognitive linguists view it as embodied and largely imaginative.</p>
+        <p tabindex="0"
+            data-translation-zh="对于范畴化，传统语言学遵循亚里士多德的观点，通过必要和充分特征的结合来定义范畴。认知语言学采用原型理论，通过围绕一个或多个原型的家族相似性来定义范畴。">For
+            categorization, traditional linguistics follows Aristotle, defining categories by a conjunction of necessary
+            and sufficient features. Cognitive linguistics adopts the prototype theory, defining categories by a family
+            of resemblance around one or several prototypes.</p>
+        <p tabindex="0" data-translation-zh="最后，如本章所示，隐喻无处不在，本质上是概念性的，具有系统性，由源域和目标域组成，并植根于身体经验。">Finally, as
+            demonstrated in the chapter, metaphor is ubiquitous, conceptual in nature, systematic, composed of a source
+            domain and a target domain, and grounded in bodily experience.</p>
+        <p tabindex="0" data-translation-zh="最后一个问题：本章是否唤起了您对这些常常被视为理所当然的基本问题的认识？">As a final question: Has this chapter
+            aroused your awareness of these fundamental questions that are often taken for granted?</p>
+
+
+        <div class="exercises">
+            <h2 id="exercises">Exercises</h2>
+            <ol>
+                <li>What do you think is the relationship between language and thought?</li>
+                <li>What do you think is the relationship between language and the outside world?</li>
+                <li>What do you think is the nature of thought?</li>
+                <li>How do you think we categorize things?</li>
+                <li>Collect some pop songs (both English and Chinese). Can you work out the conceptual metaphors of LOVE
+                    carried by them? Are there any differences between English and Chinese in this respect?</li>
+            </ol>
+        </div>
+
+        <div class="references">
+            <h2 id="references">References</h2>
+            <ul>
+                <li>Bolinger, D. 1968. <em>Aspects of Language</em>. New York: Harcourt, Brace & World, Inc.</li>
+                <li>Gardenfors, P. 1998. <em>Conceptual Spaces</em>. Manuscripts.</li>
+                <li>Johnson, M. 1987. <em>The Body in the Mind</em>. Chicago: University of Chicago Press.</li>
+                <li>Lakoff, G. 1987. <em>Women, Fire, and Dangerous Things</em>. Chicago: University of Chicago Press.
+                </li>
+                <li>Lakoff, G. 1993. The contemporary theory of metaphor. In Ortony (ed.) <em>Metaphor and Thought</em>.
+                    Cambridge: Cambridge University Press.</li>
+                <li>Lakoff, G. 1994. What is a conceptual system? In Overton & Palermo (eds.) <em>The Nature &
+                        Ontogenesis of Meaning</em>. Hillsdale, NJ: Lawrence Erlbaum.</li>
+                <li>Lakoff, G. & Johnson, M. 1980. <em>Metaphors We Live By</em>. Chicago: University of Chicago Press.
+                </li>
+                <li>Nuyts, J. 1993. Cognitive linguistics. <em>Journal of Pragmatics</em> 20: 269 - 290.</li>
+                <li>Rosch, E. 1975. Cognitive representations of semantic categories. <em>Journal of Experimental
+                        Psychology: General</em> 104: 192 - 233.</li>
+                <li>Taylor, J. R. 1995. <em>Linguistic Categorization: Prototypes in Linguistic Theory</em>. Oxford:
+                    Oxford University Press.</li>
+                <li>Winter, S. L. 1995. A clearing in the forest. <em>Metaphor and Symbolic Activity</em> 10: 223 - 245.
+                </li>
+                <li>Wittgenstein, L. 1978. <em>Philosophical Investigations</em>. Translated by G. E. M. Anscombe.
+                    Oxford: Basil Blackwell.</li>
+            </ul>
+        </div>
+    </div>
+
+    <button id="scrollToTopBtn" title="Go to top">▲</button>
+
+    <div id="knowledgeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="modalVisualContent">
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Auto-collapsing Top Navigation Bar
+        var lastScrollTop = 0;
+        var navbar = document.getElementById("topNav");
+        var navbarHeight = navbar.offsetHeight;
+
+        window.addEventListener("scroll", function () {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop && scrollTop > navbarHeight) {
+                navbar.style.top = "-" + (navbarHeight + 5) + "px"; // Hide navbar (add a little buffer)
+            } else {
+                navbar.style.top = "0"; // Show navbar
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        }, false);
+
+        // Scroll to Top Button
+        var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        var scrollThreshold = 200;
+
+        window.onscroll = function () { // Combined scroll functions
+            // Scroll to top button logic
+            if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+                scrollToTopBtn.style.display = "block";
+                scrollToTopBtn.style.opacity = "1";
+            } else {
+                scrollToTopBtn.style.opacity = "0";
+                setTimeout(function () {
+                    if (scrollToTopBtn.style.opacity === "0") {
+                        scrollToTopBtn.style.display = "none";
+                    }
+                }, 300);
+            }
+        };
+
+        scrollToTopBtn.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scroll for internal links in nav
+        document.querySelectorAll('.top-nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const offsetTop = targetElement.offsetTop - navbarHeight - 10;
+                    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Modal Logic for Knowledge Points
+        const modal = document.getElementById("knowledgeModal");
+        const modalContentContainer = document.getElementById("modalVisualContent");
+        const closeBtn = modal.querySelector(".close-button");
+
+        document.querySelectorAll(".knowledge-point").forEach(point => {
+            point.addEventListener("click", function () {
+                const visualKey = this.getAttribute("data-visual");
+                loadVisualContent(visualKey);
+                modal.style.display = "block";
+            });
+        });
+
+        closeBtn.onclick = function () {
+            modal.style.display = "none";
+            modalContentContainer.innerHTML = ""; // Clear content
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+                modalContentContainer.innerHTML = ""; // Clear content
+            }
+        }
+        const cn = (text) => `<span class="chinese-in-diagram">${text}</span>`;
+
+        function loadVisualContent(key) {
+            let content = "";
+            switch (key) {
+                case "whorf-hypothesis":
+                    content = `
+                        <h4>Whorf Hypothesis (Linguistic Relativity)</h4>
+                        <p style="text-align:center;">This hypothesis suggests that the structure of a language affects its speakers' worldview or cognition.</p>
+                        <div style="text-align:center; margin: 20px 0;">
+                            <img src="https://sa1s3optim.patientpop.com/assets/images/provider/photos/2150491.jpg" alt="Whorf Hypothesis Visualization">
+                            <p style="font-size:0.9em; color:#555;">Imagine language as a pair of colored/distorting glasses. Different languages provide different "lenses," shaping how we perceive reality (e.g., concepts of time, space, color).</p>
+                        </div>`;
+                    break;
+                case "linguistic-determinism-relativity": // Essentially the same as Whorf-Hypothesis
+                    content = `
+                        <h4>Linguistic Determinism and Linguistic Relativity - ${cn('语言决定论和语言相对论')}</h4>
+                        <p class="diagram-text">These are the two components of the <strong>Whorf Hypothesis</strong> (or Sapir-Whorf Hypothesis).</p>
+                        <table class="comparison-table">
+                            <thead><tr><th>Aspect</th><th>Linguistic Determinism (Strong)</th><th>Linguistic Relativity (Weak)</th></tr></thead>
+                            <tbody>
+                                <tr><td><strong>Core Idea</strong></td><td>Language <em>dictates</em> thought and perception.</td><td>Language <em>influences</em> or <em>shapes</em> thought and perception.</td></tr>
+                                <tr><td><strong>Cognitive Possibility</strong></td><td>Concepts not encoded in language are unthinkable.</td><td>Concepts not easily encoded may be harder to think about or less salient, but not impossible.</td></tr>
+                                <tr><td><strong>Worldview</strong></td><td>Speakers of different languages live in different "thought worlds."</td><td>Speakers of different languages may have different habitual ways of seeing the world, but can understand other perspectives.</td></tr>
+                                <tr><td><strong>Flexibility</strong></td><td>Rigid; thought is constrained by linguistic structures.</td><td>Flexible; language guides but doesn't imprison thought.</td></tr>
+                                <tr><td><strong>Example (Hypothetical)</strong></td><td>If a language has no word for 'future', its speakers cannot conceive of the future.</td><td>A language with rich vocabulary for snow may lead its speakers to perceive and recall more distinctions in snow types.</td></tr>
+                                <tr><td><strong>Current Acceptance</strong></td><td>Largely rejected by modern linguists and psychologists.</td><td>Widely accepted as plausible and supported by some research.</td></tr>
+                            </tbody>
+                        </table>
+                        <p class="diagram-text" style="margin-top:15px;">The text uses the example of English (spatializing time) versus Hopi (time as 'duration') to illustrate Whorf's ideas. While Whorf's specific claims about Hopi have been debated, the general principle of linguistic relativity continues to be an area of active research.</p>
+                        <p class="diagram-text">See also: <span class="knowledge-point" data-visual="whorf-hypothesis" style="cursor:pointer; color:blue; text-decoration:underline;">Whorf Hypothesis Details</span>.</p>
+
+    `;
+                    break;
+                case "prototype-theory":
+                    content = `
+                        <div class="prototype-card">
+                            <h4>Visualizing a Prototype Category: BIRD</h4>
+                            <p class="description">Imagine the category "BIRD". A robin is often considered a central prototype. Other birds are judged by their similarity to this prototype.</p>
+                            <div class="prototype-visualization-area">
+                                <div class="prototype-item">
+                                    <span class="label bg-teal-500">🐦 Robin</span>
+                                    <span class="tooltip">Central Prototype: High typicality</span>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="prototype-members">
+                                    <div class="prototype-item">
+                                        <span class="label bg-teal-300">🕊️ Sparrow</span>
+                                        <span class="tooltip">High typicality</span>
+                                    </div>
+                                    <div class="prototype-item">
+                                        <span class="label bg-sky-300">🦅 Eagle</span>
+                                        <span class="tooltip">Medium typicality</span>
+                                    </div>
+                                    <div class="prototype-item">
+                                        <span class="label bg-amber-300">🐧 Penguin</span>
+                                        <span class="tooltip">Low typicality (doesn't fly)</span>
+                                    </div>
+                                    <div class="prototype-item">
+                                        <span class="label bg-neutral-300">🐔 Chicken</span>
+                                        <span class="tooltip">Low typicality (farm bird)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="footer-text">Items are categorized based on resemblance to the prototype. There are no strict boundaries, and typicality varies.</p>
+                        </div>`;
+                    break;
+                case "traditional-cognitive-linguistics":
+                    content = `
+                        <h4>Language & The World: Two Views</h4>
+                        <p class="diagram-text">The relationship between language and the outside world is viewed differently by traditional
+        and cognitive linguistics.</p>
+                        <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Traditional Linguistic Approach</th>
+                <th>Modern Cognitive Approach</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Meaning Location</strong></td>
+                <td>Exists in the objective world, independent of human minds. (e.g., 'table' means the physical object)
+                </td>
+                <td>Mental entities; elements of conceptual structure in human minds. (e.g., 'table' is a concept)</td>
+            </tr>
+            <tr>
+                <td><strong>Source of Meaning</strong></td>
+                <td>Language derives meaning from direct reference to objects/entities in the world. (Language зеркалит
+                    мир)</td>
+                <td>Language derives meaning from reference to a <em>conceptualization</em> of the world. (Language
+                    reflects how we understand the world)</td>
+            </tr>
+            <tr>
+                <td><strong>Role of Language User</strong></td>
+                <td>Passive; language mirrors an existing objective reality.</td>
+                <td>Active; language users construe and structure their understanding of the world through language,
+                    influenced by experience.</td>
+            </tr>
+            <tr>
+                <td><strong>Nature of Language</strong></td>
+                <td>An autonomous system, often studied in isolation from other cognitive faculties. Main objective:
+                    truth conditions.</td>
+                <td>Part of the overall conceptual structure, intimately linked with memory, perception, culture, etc.
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Metaphorical Representation</strong></td>
+                <td>
+                    <div
+                        style="text-align:center; padding:10px; border:1px solid #ccc; border-radius:5px; background-color:#f9f9f9;">
+                        <strong>Language <span class="diagram-arrow">➡️</span> World</strong><br />
+                        <small>(Language directly maps to the outside world)</small>
+                    </div>
+                </td>
+                <td>
+                    <div
+                        style="text-align:center; padding:10px; border:1px solid #ccc; border-radius:5px; background-color:#f9f9f9;">
+                        <strong>Language <span class="diagram-arrow">➡️</span> Conceptual Structure <span
+                                class="diagram-arrow">➡️</span> World</strong><br />
+                        <small>(Language reflects conceptualization, which is based on the world)</small>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+                        <div style="display:flex; justify-content:space-around; text-align:center;">
+                            <div>
+                                <h5>Traditional View</h5>
+                                <p>Language  doğrudan Dünya'yı Yansıtır</p>
+                                <p style="font-size:2em;">🌐 ➡️ 🗣️</p>
+                                <p>(World  напрямую отображается Language)</p>
+                            </div>
+                            <div>
+                                <h5>Cognitive View</h5>
+                                <p>Language ➡️ Kavramsallaştırma ➡️ Dünya</p>
+                                <p style="font-size:2em;">🗣️ ➡️ 🤔 ➡️ 🌐</p>
+                                <p>(Language отображает Conceptualization of World)</p>
+                            </div>
+                        </div>
+                        <p style="text-align:center; margin-top:15px;">The traditional view sees language as a direct mirror of an objective world. The cognitive view sees language as reflecting a mental conceptualization of the world, which is then related to the world.</p>
+                    `;
+                    break;
+                case "objectivism-experientialism":
+                    content = `
+                        <h4>Nature of Thought: Two Views</h4>
+
+                        <p class="diagram-text">These two philosophies offer contrasting views on the nature of thought and reason.</p>
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>Aspect</th>
+                <th>Objectivism (${cn('客观主义')})</th>
+                <th>Experiential Realism (${cn('经验现实主义')})</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Nature of Thought</strong></td>
+                <td>Abstract manipulation of symbols that correspond to entities and categories in the objective world.
+                    (Mind mirrors nature)</td>
+                <td>Embodied; grounded in perception, bodily experience, and social environment. Shaped by our physical
+                    and cultural interactions.</td>
+            </tr>
+            <tr>
+                <td><strong>Role of the Body</strong></td>
+                <td>Disembodied; thought exists independently of the thinker's physical properties. Body is irrelevant
+                    to the nature of concepts.</td>
+                <td>Embodied; the nature of our bodies (e.g., upright posture, sensory systems) fundamentally shapes our
+                    conceptual systems (e.g., UP-DOWN schema).</td>
+            </tr>
+            <tr>
+                <td><strong>Truth</strong></td>
+                <td>Objectively true or false based on correspondence to the external world and logical relations.</td>
+                <td>Truth is understood relative to our embodied understanding and interaction with the world. Goes
+                    beyond simple correspondence.</td>
+            </tr>
+            <tr>
+                <td><strong>Imagination & Metaphor</strong></td>
+                <td>Secondary; thought is primarily literal and logical.</td>
+                <td>Central; thought is largely imaginative, relying heavily on metaphor, metonymy, and other
+                    imaginative structures to understand abstract concepts.</td>
+            </tr>
+            <tr>
+                <td><strong>Example Concept: FRIENDSHIP</strong></td>
+                <td>An abstract relation with defined properties.</td>
+                <td>Understood via metaphors like FRIENDSHIP IS A JOURNEY, FRIENDSHIP IS A VALUABLE POSSESSION
+                    ("treasure friendship"), etc., based on experiences.</td>
+            </tr>
+            <tr>
+                <td><strong>Key Idea</strong></td>
+                <td><span style="font-size:2em;">🧠 <span class="diagram-arrow">↔️</span> 🌍</span> <br />
+                    <small>Thought as direct, abstract representation of reality.</small>
+                </td>
+                <td><span style="font-size:2em;">🧍 <span class="diagram-arrow">➡️</span> 🤔 <span
+                            class="diagram-arrow">➡️</span> 🌍</span> <br /> <small>Bodily experience shapes thought,
+                        which then interprets reality.</small></td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="diagram-text" style="margin-top:15px;">Objectivism sees thought as a formal, abstract process mirroring an
+        external, objective reality. Experiential realism, a cornerstone of cognitive linguistics, argues that thought
+        is fundamentally shaped by our physical bodies, our sensory and motor experiences, and our interactions within a
+        cultural context. This leads to the importance of <span class="knowledge-point" data-visual="embodied-cognition"
+            style="cursor:pointer; color:blue; text-decoration:underline;">embodied cognition</span> and conceptual
+        metaphor.</p>
+
+                        <div style="display: flex; justify-content: space-around; text-align: left; font-family: sans-serif; border: 1px solid #eee; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <div style="flex: 1; padding-right: 10px; border-right: 1px solid #eee;">
+        <h5 style="margin-top: 0; margin-bottom: 10px; font-size: 1.1em; color: #333;">Objectivism</h5>
+        <p style="margin: 5px 0; font-size: 0.9em;"><span style="font-size: 1.2em; margin-right: 5px;">💡</span> Abstract Symbols</p>
+        <p style="margin: 5px 0; font-size: 0.9em;"><span style="font-size: 1.2em; margin-right: 5px;">🧠</span> Disembodied</p>
+        <p style="margin: 5px 0; font-size: 0.9em;"><span style="font-size: 1.2em; margin-right: 5px;">✔️</span> Objective Truth</p>
+        <p style="font-size: 0.75em; color: #555; margin-top: 10px;"><em>(Thought as manipulating abstract symbols, independent of body, mirroring external reality.)</em></p>
+    </div>
+    <div style="flex: 1; padding-left: 15px;">
+        <h5 style="margin-top: 0; margin-bottom: 10px; font-size: 1.1em; color: #333;">Experiential Realism</h5>
+        <p style="margin: 5px 0; font-size: 0.9em;"><span style="font-size: 1.2em; margin-right: 5px;">🤸</span> Embodied (Body-based)</p>
+        <p style="margin: 5px 0; font-size: 0.9em;"><span style="font-size: 1.2em; margin-right: 5px;">🎨</span> Imaginative (Metaphor, Metonymy)</p>
+        <p style="margin: 5px 0; font-size: 0.9em;"><span style="font-size: 1.2em; margin-right: 5px;">🌍</span> Grounded in Experience</p>
+        <p style="font-size: 0.75em; color: #555; margin-top: 10px;"><em>(Thought shaped by our physical bodies, experiences, and imagination.)</em></p>
+    </div>
+</div>
+                    `;
+                    break;
+                case "conceptual-metaphor":
+                case "argument-is-war":
+                    content = `
+                        <h4>Conceptual Metaphor: ARGUMENT IS WAR</h4>
+                        <p style="text-align:center;">We understand and structure the abstract concept of an "argument" using our more concrete understanding of "war".</p>
+                        <ul style="list-style-type: none; padding: 0; text-align: left;">
+                            <li style="margin-bottom:10px;">🛡️ Your claims are <strong>indefensible</strong>. (Position)</li>
+                            <li style="margin-bottom:10px;">⚔️ He <strong>attacked</strong> every weak point in my argument. (Offensive action)</li>
+                            <li style="margin-bottom:10px;">🎯 His criticisms were right <strong>on target</strong>. (Accuracy of attack)</li>
+                            <li style="margin-bottom:10px;">💣 I <strong>demolished</strong> his argument. (Destruction)</li>
+                            <li style="margin-bottom:10px;">🏆 I've never <strong>won</strong> an argument with him. (Goal/Outcome)</li>
+                        </ul>
+                        <p style="font-size:0.9em; color:#555; text-align:center;">This isn't just about words; it shapes how we *act* in arguments (e.g., strategies, seeing an opponent).</p>
+                    `;
+                    break;
+                default:
+                    content = "<p>Detailed visualization for this concept will be shown here.</p>";
+            }
+            modalVisualContent.innerHTML = content;
+        }
+
+        // Paragraph Translation Logic
+        const contentParagraphs = document.querySelectorAll(".container p[data-translation-zh]");
+
+        contentParagraphs.forEach(p => {
+            p.addEventListener("keydown", function (event) {
+                if (event.key === "Tab") {
+                    event.preventDefault(); // Prevent default tabbing behavior for this interaction
+
+                    const existingTranslation = this.nextElementSibling;
+                    if (existingTranslation && existingTranslation.classList.contains("translation-popup")) {
+                        existingTranslation.remove(); // Hide translation
+                    } else {
+                        const translationText = this.getAttribute("data-translation-zh");
+                        if (translationText) {
+                            const translationDiv = document.createElement("div");
+                            translationDiv.classList.add("translation-popup");
+                            translationDiv.textContent = translationText;
+                            this.parentNode.insertBefore(translationDiv, this.nextSibling); // Insert after the paragraph
+                        }
+                    }
+                }
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
